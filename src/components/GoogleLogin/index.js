@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, TouchableOpacity } from "react-native";
-import {styles} from './style'
+import {styles} from './styles'
 
 const GoogleLogin = () => {
     return(
