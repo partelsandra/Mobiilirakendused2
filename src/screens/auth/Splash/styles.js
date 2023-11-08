@@ -1,7 +1,10 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-
+    image: {
+        width: '100%',
+        height: 200
+    },
     container: {
         padding: 24,
         flexDirection: 'column',
@@ -10,30 +13,23 @@ export const styles = StyleSheet.create({
         height: '100%',
         borderWidth: 1
     },
-
     titleContainer: {
         marginVertical: 54
     },
-
-    image: {
-        width: '100%',
-        height: 200
-    },
-
     title: {
         fontSize: 40,
-        fontWeight: "bold",
-        textAlign: "center"
+        fontWeight: "bold" 
     },
-
     innerTitle: {
         color: '#FCA34D',
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline' 
     },
-
+    textContainer: {
+        textAlign: "center"
+    },
     footerText: {
         color: '#4F63AC',
-        textAlign: "center",
+        textAlign: 'center',
         fontSize: 16,
         fontWeight: 'bold',
         marginTop: 30
