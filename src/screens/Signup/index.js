@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import { View, Text} from "react-native";
+import React, { useState } from "react";
+import { View, Text } from "react-native";
 import AuthHeader from "../../components/AuthHeader";
 import Input from "../../components/Input";
 import Checkbox from "../../components/Checkbox";
@@ -10,8 +10,12 @@ import GoogleLogin from "../../components/GoogleLogin";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 
-const Signup = () => {
+const Signup = ({ navigation }) => {
     const [checked, setChecked] = useState(false)
+
+    const onSignIn = () => {
+        navigation.navigate('Signin')
+    }
 
     const onBack = () => {
         NavigationContainer.goBack()
@@ -32,7 +36,7 @@ const Signup = () => {
                 <Separator text="Or Sign in" />
                 <GoogleLogin />
                 <Text style={styles.footerText}>Already have an account?
-                    <Text style={styles.footerLink}>Sign In</Text>
+                    <Text onPress={onSignIn} style={styles.footerLink}>Sign In</Text>
                 </Text>
             </View>
         </SafeAreaView>
