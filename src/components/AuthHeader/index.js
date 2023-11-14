@@ -5,9 +5,11 @@ import {
     Image,
     Pressable
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { styles } from "./styles";
 
 const AuthHeader = ({ title, onBackPress }) => {
+    const navigation = useNavigation()
     return (
         <View style={styles.container}>
             <Pressable hitSlop={20} onPress={onBackPress}>
@@ -18,4 +20,4 @@ const AuthHeader = ({ title, onBackPress }) => {
     )
 }
 
-export default AuthHeader
+export default React.memo(AuthHeader)

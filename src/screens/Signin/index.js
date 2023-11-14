@@ -7,22 +7,31 @@ import Button from "../../components/Button";
 import { styles } from "./styles";
 import Separator from "../../components/Seperator";
 import GoogleLogin from "../../components/GoogleLogin";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Signin = () => {
     const [checked, setChecked] = useState(false)
 
     return (
-        <View style={styles.container}>
-            <AuthHeader title="Sign in"/>
-            <Input label="Email" placeholder="example@gmail.com"/>
-            <Input isPassword label="Password" placeholder="******"/>
-            <Button style={styles.button} title="Sign In"/>
-            <Separator text="Or sign in with"/>
-            <GoogleLogin/>
-            <Text style={styles.footerText}>Already have an account?
-                <Text style={styles.footerLink}>Sign Up</Text>
-            </Text>
-        </View>
+        <SafeAreaView>
+            <View style={styles.container}>
+                <AuthHeader title="Sign In"></AuthHeader>
+                <Input style={styles.inputField} label="Name" placeholder="John Doe" />
+                <Input label="Email" placeholder="example@gmail.com" />
+                <Input isPassword label="Password" placeholder="*******" />
+                <View style={styles.agreeRow}>
+                    <Checkbox checked={checked} onCheck={setChecked}/>
+                    <Text style={styles.agreeText}>I Agree with <Text style={styles.agreeTextBold}>Terms & Privacy</Text></Text>
+                </View>
+                <Button style={styles.button} title="Sign In" />
+                <Separator text="Or Sign in" />
+                <GoogleLogin/>
+                <Text style={styles.footerText}>Already have an account?
+                    <Text style={styles.footerLink}>Sign In</Text>
+                </Text>
+            </View>
+        </SafeAreaView>
     )
 }
-export default Signin
+
+export default React.memo(Signin)

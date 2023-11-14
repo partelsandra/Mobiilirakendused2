@@ -4,14 +4,13 @@ import { colors } from "../../utils/colors";
 
 export const styles = StyleSheet.create({
     container: {
-        padding: 14,
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 54
     },
     image: {
         width: 18,
-        height: 18,        
+        height: 18
     },
     title: {
         color: colors.blue,

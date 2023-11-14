@@ -4,27 +4,34 @@ import {
     View,
     Image,
     Pressable
- } from "react-native"
- import Button from "../../../components/Button";
- import { styles } from "./styles";
+} from "react-native"
+import Button from "../../../components/Button";
+import Link from "../../../components/Link";
+import { styles } from "./styles";
 
-const Splash = () => {
+
+const Splash = ({ navigation }) => {
+    console.log('navigation => ', navigation)
+
+    const onSignup = () => {
+        navigation.navigate('Signup')
+    }
+
+    const onSignin = () => {
+        navigation.navigate('Signin')
+    }
+
     return (
         <View style={styles.container}>
-            <Image resizeMode="contain" style={styles.image} source={require('../../../assets/splash_image.png')}/>
+            <Image resizeMode="contain" style={styles.image} source={require('../../../assets/splash_image.png')} />
+            <Text style={styles.title}>You'll Find</Text>
+            <Text style={[styles.title, styles.innerTitle]}>All you need</Text>
+            <Text style={styles.title}>Here!</Text>
 
-        <View style={styles.titleContainer}>
-            <Text style={[styles.title, styles.textContainer]}>You'll Find Text</Text>
-            <Text style={[styles.title, styles.innerTitle, styles.textContainer]}> All you need</Text>
-            <Text style={[styles.title, styles.textContainer]}> Here!</Text>
-        </View>
-        <Button title="Sign up" />
+            <Button onPress={onSignup} title="Sign Up" />
 
-        <Pressable hitSlop={20}>
-            <Text style={styles.footerText}>Sign In</Text>
-        </Pressable>
+            <Link onPress={onSignin} title="Sign in" />
         </View>
     )
 }
-
-export default Splash
+export default React.memo(Splash)
