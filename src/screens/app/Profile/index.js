@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import {styles} from "./styles"
 import Header from "../../../components/Header";
 import ListItem from "../../../components/ListItem";
+import Button from "../../../components/Button";
 
  
 const Profile = ({navigation}) => {
@@ -18,6 +19,12 @@ const Profile = ({navigation}) => {
     const onNewListingPress = () => {
       navigation.navigate('CreateListing')
     }
+
+    //const onNewListingPress = () => {
+      //console.log('Attempting to navigate to CreateListing');
+      //navigation.navigate('Profile', { screen: 'CreateListing' });
+    //}
+    
   
     return (
       <SafeAreaView style={{flex: 1}}>
